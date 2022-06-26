@@ -14,6 +14,13 @@ class _GameStageState extends State<GameStage> {
     var mediaQd = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [Colors.blue, Colors.red]
+          )
+        ),
           padding: EdgeInsets.all(24.0),
           width: mediaQd.width,
           height: mediaQd.height,
