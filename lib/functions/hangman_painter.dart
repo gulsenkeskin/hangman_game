@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hangman_game/bloc/game_stage_bloc.dart';
 
 class HangManPainter extends CustomPainter {
+  final GameStageBloc _gameStageBloc;
   double _headHeight = 32.0;
+
+  HangManPainter(this._gameStageBloc);
 
   @override
   void paint(Canvas canvas, Size size) {
