@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hangman_game/functions/hangman_painter.dart';
+import 'package:hangman_game/widgets/character_picker.dart';
+import 'package:hangman_game/widgets/puzzle.dart';
 
 class GameStage extends StatefulWidget {
   const GameStage({Key? key}) : super(key: key);
@@ -14,13 +16,11 @@ class _GameStageState extends State<GameStage> {
     var mediaQd = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [Colors.blue, Colors.red]
-          )
-        ),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [Colors.blue, Colors.red])),
           padding: EdgeInsets.all(24.0),
           width: mediaQd.width,
           height: mediaQd.height,
@@ -41,8 +41,16 @@ class _GameStageState extends State<GameStage> {
               ),
               Expanded(
                 child: Container(
-                  child: Center(child: Text("Hangman")),
-                ),
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CharacterPicker(),
+                    Puzzle(
+                      guessWord: "GULSEN",
+                    )
+                  ],
+                )),
               )
             ],
           )),
