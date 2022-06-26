@@ -7,6 +7,7 @@ class HangManPainter extends CustomPainter {
     paint.color = Colors.grey;
     paint.style = PaintingStyle.fill;
 
+    //dikdörgen çizme
     canvas.drawRect(Rect.fromLTRB(0, size.height, 12, 0), paint);
 
     canvas.drawRect(Rect.fromLTRB(0, 0, size.width, 12), paint);
